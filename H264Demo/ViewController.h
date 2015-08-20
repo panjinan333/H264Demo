@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VideoFrameExtractor.h"
+#import "DocumentPathClass.h"
 
 @interface ViewController : UIViewController
+{
+    IBOutlet UIImageView *imageView;
+    IBOutlet UILabel *frameCountText, *frameSizeText;
+    VideoFrameExtractor *videoDecoder;
+    NSTimer *videoFrameTimer;
+}
+
+-(IBAction) playVideo:(id) sender;
 
 
 @end

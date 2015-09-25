@@ -355,13 +355,11 @@ initError:
     fclose(pFile);
 }
 
-
--(void)dealloc
+-(void) releaseFFMPEG
 {
-	// Free scaler
-	sws_freeContext(img_convert_ctx);
-	// Free RGB picture
-	avpicture_free(&picture);
+    sws_freeContext(img_convert_ctx);
+    // Free RGB picture
+    avpicture_free(&picture);
     // Free the YUV frame
     av_free(pFrame);
     
@@ -372,8 +370,27 @@ initError:
     // Close the video file
     if (pFormatCtx)
         avformat_close_input(&(pFormatCtx));
-	
-	//[super dealloc];
 }
+
+
+//-(void)dealloc
+//{
+//	// Free scaler
+//	sws_freeContext(img_convert_ctx);
+//	// Free RGB picture
+//	avpicture_free(&picture);
+//    // Free the YUV frame
+//    av_free(pFrame);
+//    
+//    // Close the codec
+//    if (pCodecCtx)
+//        avcodec_close(pCodecCtx);
+//    
+//    // Close the video file
+//    if (pFormatCtx)
+//        avformat_close_input(&(pFormatCtx));
+//	
+//	//[super dealloc];
+//}
 
 @end

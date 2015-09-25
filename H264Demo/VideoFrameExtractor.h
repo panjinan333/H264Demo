@@ -66,5 +66,7 @@
 /* Seek to closest keyframe near specified time */
 -(void)seekTime:(double)seconds;
 
+-(void) releaseFFMPEG;
+
 
 @end

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,18 +25,18 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqX-BX-Exz">
-                                <rect key="frame" x="225" y="469" width="150" height="30"/>
+                                <rect key="frame" x="140" y="469" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="lqp-MR-09C"/>
                                     <constraint firstAttribute="height" constant="30" id="usZ-E4-t0n"/>
                                 </constraints>
-                                <state key="normal" title="play">
+                                <state key="normal" title="FILE">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playVideo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sW1-es-cST"/>
+                                    <action selector="playFile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h7q-s2-rLt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="frame count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yex-XS-457">
@@ -45,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="35" id="LdF-Lc-LAg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="frame size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19q-AM-2UP">
@@ -55,30 +56,49 @@
                                     <constraint firstAttribute="width" constant="320" id="JBq-MD-eT2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzo-Wd-x3O">
+                                <rect key="frame" x="310" y="469" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="RP5-rh-TM8"/>
+                                    <constraint firstAttribute="height" constant="30" id="S8O-zd-goU"/>
+                                </constraints>
+                                <state key="normal" title="URL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playURL:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="taG-0d-wCB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="19q-AM-2UP" firstAttribute="top" secondItem="Yex-XS-457" secondAttribute="bottom" constant="8" id="IuP-8c-2it"/>
                             <constraint firstItem="WqX-BX-Exz" firstAttribute="top" secondItem="JfL-mD-kJE" secondAttribute="bottom" constant="49" id="K4j-YP-saZ"/>
-                            <constraint firstItem="WqX-BX-Exz" firstAttribute="centerX" secondItem="JfL-mD-kJE" secondAttribute="centerX" id="Lg7-TS-3OH"/>
+                            <constraint firstItem="WqX-BX-Exz" firstAttribute="centerX" secondItem="JfL-mD-kJE" secondAttribute="centerX" constant="-85" id="Lg7-TS-3OH"/>
                             <constraint firstItem="Yex-XS-457" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Trg-uF-npM"/>
                             <constraint firstItem="19q-AM-2UP" firstAttribute="centerX" secondItem="Yex-XS-457" secondAttribute="centerX" id="WSs-Su-rVZ"/>
                             <constraint firstAttribute="centerX" secondItem="Yex-XS-457" secondAttribute="centerX" id="ZAw-WM-8rD"/>
                             <constraint firstAttribute="centerX" secondItem="JfL-mD-kJE" secondAttribute="centerX" id="kub-xS-nKw"/>
+                            <constraint firstItem="Qzo-Wd-x3O" firstAttribute="top" secondItem="JfL-mD-kJE" secondAttribute="bottom" constant="49" id="lOc-hh-538"/>
+                            <constraint firstItem="Qzo-Wd-x3O" firstAttribute="leading" secondItem="WqX-BX-Exz" secondAttribute="trailing" constant="20" id="nb2-LQ-Wco"/>
                             <constraint firstAttribute="centerY" secondItem="JfL-mD-kJE" secondAttribute="centerY" id="zd7-QT-OTn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="file" destination="WqX-BX-Exz" id="OYt-Gf-UAA"/>
                         <outlet property="frameCountText" destination="Yex-XS-457" id="gxw-3j-3cb"/>
                         <outlet property="frameSizeText" destination="19q-AM-2UP" id="9W7-PO-VYf"/>
                         <outlet property="imageView" destination="JfL-mD-kJE" id="bYA-uE-xzn"/>
+                        <outlet property="url" destination="Qzo-Wd-x3O" id="lGo-Sl-9l3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="473" y="362"/>
         </scene>
     </scenes>
 </document>

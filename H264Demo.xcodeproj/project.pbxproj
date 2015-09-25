@@ -12,6 +12,10 @@
 		ACAC4C7A1B7480AD0080CE4B /* TEST7.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = ACAC4C791B7480AD0080CE4B /* TEST7.MP4 */; };
 		ACAC4C7C1B7498F60080CE4B /* TEST8.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = ACAC4C7B1B7498F60080CE4B /* TEST8.MP4 */; };
 		ACAC4C7E1B749D050080CE4B /* TEST9.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = ACAC4C7D1B749D050080CE4B /* TEST9.MP4 */; };
+		ACCB45591BB4F6FC00835E6F /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCB45581BB4F6FC00835E6F /* libbz2.tbd */; };
+		ACCB455B1BB4F70500835E6F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCB455A1BB4F70500835E6F /* libz.tbd */; };
+		ACCB455D1BB4F71000835E6F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCB455C1BB4F71000835E6F /* libiconv.tbd */; };
+		ACCB455E1BB4F7EC00835E6F /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB61B5E0E600033AC28 /* libavutil.a */; };
 		ACF7BF8F1B5E0DB20033AC28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF7BF8E1B5E0DB20033AC28 /* main.m */; };
 		ACF7BF921B5E0DB20033AC28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF7BF911B5E0DB20033AC28 /* AppDelegate.m */; };
 		ACF7BF951B5E0DB20033AC28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF7BF941B5E0DB20033AC28 /* ViewController.m */; };
@@ -22,13 +26,9 @@
 		ACF7BFB91B5E0E600033AC28 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB31B5E0E600033AC28 /* libavcodec.a */; };
 		ACF7BFBA1B5E0E600033AC28 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB41B5E0E600033AC28 /* libavdevice.a */; };
 		ACF7BFBB1B5E0E600033AC28 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB51B5E0E600033AC28 /* libavformat.a */; };
-		ACF7BFBC1B5E0E600033AC28 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB61B5E0E600033AC28 /* libavutil.a */; };
 		ACF7BFBD1B5E0E600033AC28 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB71B5E0E600033AC28 /* libswresample.a */; };
 		ACF7BFBE1B5E0E600033AC28 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFB81B5E0E600033AC28 /* libswscale.a */; };
 		ACF7BFC01B5E0E6C0033AC28 /* ffmpeg_include in Resources */ = {isa = PBXBuildFile; fileRef = ACF7BFBF1B5E0E6C0033AC28 /* ffmpeg_include */; };
-		ACF7BFC31B5E0FF30033AC28 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFC21B5E0FF30033AC28 /* libiconv.dylib */; };
-		ACF7BFC51B5E10050033AC28 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFC41B5E10050033AC28 /* libz.dylib */; };
-		ACF7BFC71B5E10160033AC28 /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7BFC61B5E10160033AC28 /* libbz2.dylib */; };
 		ACF7BFCA1B5E10800033AC28 /* VideoFrameExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF7BFC91B5E10800033AC28 /* VideoFrameExtractor.m */; };
 		ACF7BFCD1B5E17510033AC28 /* DocumentPathClass.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF7BFCC1B5E17510033AC28 /* DocumentPathClass.m */; };
 /* End PBXBuildFile section */
@@ -49,6 +49,9 @@
 		ACAC4C791B7480AD0080CE4B /* TEST7.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TEST7.MP4; sourceTree = "<group>"; };
 		ACAC4C7B1B7498F60080CE4B /* TEST8.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TEST8.MP4; sourceTree = "<group>"; };
 		ACAC4C7D1B749D050080CE4B /* TEST9.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TEST9.MP4; sourceTree = "<group>"; };
+		ACCB45581BB4F6FC00835E6F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		ACCB455A1BB4F70500835E6F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		ACCB455C1BB4F71000835E6F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		ACF7BF891B5E0DB20033AC28 /* H264Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H264Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF7BF8D1B5E0DB20033AC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF7BF8E1B5E0DB20033AC28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,9 +72,6 @@
 		ACF7BFB71B5E0E600033AC28 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ffmpeg_lib/libswresample.a; sourceTree = "<group>"; };
 		ACF7BFB81B5E0E600033AC28 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = ffmpeg_lib/libswscale.a; sourceTree = "<group>"; };
 		ACF7BFBF1B5E0E6C0033AC28 /* ffmpeg_include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ffmpeg_include; sourceTree = "<group>"; };
-		ACF7BFC21B5E0FF30033AC28 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		ACF7BFC41B5E10050033AC28 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		ACF7BFC61B5E10160033AC28 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		ACF7BFC81B5E10800033AC28 /* VideoFrameExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFrameExtractor.h; sourceTree = "<group>"; };
 		ACF7BFC91B5E10800033AC28 /* VideoFrameExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoFrameExtractor.m; sourceTree = "<group>"; };
 		ACF7BFCB1B5E17510033AC28 /* DocumentPathClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentPathClass.h; sourceTree = "<group>"; };
@@ -83,15 +83,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACF7BFC71B5E10160033AC28 /* libbz2.dylib in Frameworks */,
-				ACF7BFC51B5E10050033AC28 /* libz.dylib in Frameworks */,
-				ACF7BFC31B5E0FF30033AC28 /* libiconv.dylib in Frameworks */,
 				ACF7BFB91B5E0E600033AC28 /* libavcodec.a in Frameworks */,
 				ACF7BFBA1B5E0E600033AC28 /* libavdevice.a in Frameworks */,
 				ACF7BFBB1B5E0E600033AC28 /* libavformat.a in Frameworks */,
-				ACF7BFBC1B5E0E600033AC28 /* libavutil.a in Frameworks */,
+				ACCB455E1BB4F7EC00835E6F /* libavutil.a in Frameworks */,
 				ACF7BFBD1B5E0E600033AC28 /* libswresample.a in Frameworks */,
 				ACF7BFBE1B5E0E600033AC28 /* libswscale.a in Frameworks */,
+				ACCB455D1BB4F71000835E6F /* libiconv.tbd in Frameworks */,
+				ACCB455B1BB4F70500835E6F /* libz.tbd in Frameworks */,
+				ACCB45591BB4F6FC00835E6F /* libbz2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,9 +120,9 @@
 		ACF7BF801B5E0DB20033AC28 = {
 			isa = PBXGroup;
 			children = (
-				ACF7BFC61B5E10160033AC28 /* libbz2.dylib */,
-				ACF7BFC41B5E10050033AC28 /* libz.dylib */,
-				ACF7BFC21B5E0FF30033AC28 /* libiconv.dylib */,
+				ACCB455C1BB4F71000835E6F /* libiconv.tbd */,
+				ACCB455A1BB4F70500835E6F /* libz.tbd */,
+				ACCB45581BB4F6FC00835E6F /* libbz2.tbd */,
 				ACF7BF8B1B5E0DB20033AC28 /* H264Demo */,
 				ACF7BFA51B5E0DB20033AC28 /* H264DemoTests */,
 				ACF7BF8A1B5E0DB20033AC28 /* Products */,
@@ -243,7 +243,7 @@
 		ACF7BF811B5E0DB20033AC28 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = B1403001;
 				TargetAttributes = {
 					ACF7BF881B5E0DB20033AC28 = {
@@ -372,6 +372,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -436,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 文裕 Lai (2JBHKSS6KV)";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -448,6 +450,7 @@
 					"$(PROJECT_DIR)/H264Demo/ffmpeg_lib",
 					"$(PROJECT_DIR)/H264Demo",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hgiherway.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e91123e2-a69e-4769-9d9d-b6c88d515104";
 			};
@@ -458,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 文裕 Lai (2JBHKSS6KV)";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -470,6 +474,7 @@
 					"$(PROJECT_DIR)/H264Demo/ffmpeg_lib",
 					"$(PROJECT_DIR)/H264Demo",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hgiherway.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e91123e2-a69e-4769-9d9d-b6c88d515104";
 			};
@@ -489,6 +494,7 @@
 				);
 				INFOPLIST_FILE = H264DemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hgiherway.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/H264Demo.app/H264Demo";
 			};
@@ -504,6 +510,7 @@
 				);
 				INFOPLIST_FILE = H264DemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hgiherway.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/H264Demo.app/H264Demo";
 			};

@@ -37,22 +37,91 @@
     [self initFFMPEG];
 }
 
--(IBAction) playVideo:(id) sender
+-(IBAction) playURL:(id) sender
 {
-//    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-//    NSString *filePath = [bundle pathForResource:@"TEST9" ofType:@"MP4"];
-//    [self parserVideoFrame:filePath];
+    if ([[sender titleLabel].text isEqualToString:@"URL"])
+    {
+        playTime = 1 / 30;
+        
+        //rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov
+        //rtsp://quicktime.tc.columbia.edu:554/users/lrf10/movies/sixties.mov
+        [self parserVideoFrame:@"rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov"];
+        
+        [url setTitle:@"Stop" forState:UIControlStateNormal];
+    }
+    else if ([[sender titleLabel].text isEqualToString:@"Stop"])
+    {
+        [videoFrameTimer invalidate];
+        
+        [videoDecoder releaseFFMPEG];
+        
+        [url setTitle:@"URL" forState:UIControlStateNormal];
+    }
     
-//    //rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov
-//    //rtsp://quicktime.tc.columbia.edu:554/users/lrf10/movies/sixties.mov
-//    [self parserVideoFrame:@"rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov"];
+}
+
+-(void) parserVideoFrame:(NSString *) filePath
+{
+    frameCount = 0;
     
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(queue, ^{
+        
+        videoDecoder = [[VideoFrameExtractor alloc] initWithVideo:filePath];
+        //videoDecoder.outputWidth = imageView.frame.size.width;
+        //videoDecoder.outputHeight = imageView.frame.size.height;
+        NSLog(@"video size: %d x %d", videoDecoder.outputWidth, videoDecoder.outputHeight);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self playVideoAction];
+        });
+        
+    });
+}
+
+-(void) playVideoAction
+{
+    //依據video實際的frame數量給予適當的播放速度
+    //float playTime = videoDecoder.frameNumber / 30;
+    
+    videoFrameTimer = [NSTimer scheduledTimerWithTimeInterval:playTime
+                                                       target:self
+                                                     selector:@selector(displayNextFrame:)
+                                                     userInfo:nil
+                                                      repeats:YES];
+}
+
+-(void) displayNextFrame:(NSTimer *) timer
+{
+    if ([videoDecoder stepFrame] == 0)
+    {
+        frameCount = 0;
+        [timer invalidate];
+        return;
+    }
+    
+    frameCountText.text = [NSString stringWithFormat:@"frame count:%d", frameCount + 1];
+    
+    imageView.image = videoDecoder.currentImage;
+    
+    frameCount++;
+}
+
+#pragma mark ============= test decode function =============
+
+-(IBAction) playFile:(id) sender
+{
+    //decode file
     frameCountText.text = @"frame count:0";
     frameSizeText.text = @"frame size:0";
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *filePath = [bundle pathForResource:@"TEST8" ofType:@"MP4"];
     NSMutableData *data = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+    
+    playTime = 1;
     
     // Close the video file
     if (pFormatCtx)
@@ -92,57 +161,6 @@
     
     [self decodeAndShow:arg length:length];
 }
-
--(void) parserVideoFrame:(NSString *) filePath
-{
-    frameCount = 0;
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    dispatch_async(queue, ^{
-        
-        videoDecoder = [[VideoFrameExtractor alloc] initWithVideo:filePath];
-        //videoDecoder.outputWidth = imageView.frame.size.width;
-        //videoDecoder.outputHeight = imageView.frame.size.height;
-        NSLog(@"video size: %d x %d", videoDecoder.outputWidth, videoDecoder.outputHeight);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self playVideoAction];
-        });
-        
-    });
-}
-
--(void) playVideoAction
-{
-    //依據video實際的frame數量給予適當的播放速度
-    //float playTime = videoDecoder.frameNumber / 30;
-    
-    videoFrameTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                       target:self
-                                                     selector:@selector(displayNextFrame:)
-                                                     userInfo:nil
-                                                      repeats:YES];
-}
-
--(void) displayNextFrame:(NSTimer *) timer
-{
-    if ([videoDecoder stepFrame] == 0)
-    {
-        frameCount = 0;
-        [timer invalidate];
-        return;
-    }
-    
-    frameCountText.text = [NSString stringWithFormat:@"frame count:%d", frameCount + 1];
-    
-    imageView.image = videoDecoder.currentImage;
-    
-    frameCount++;
-}
-
-#pragma mark ============= test decode function =============
 
 -(void)initFFMPEG
 {

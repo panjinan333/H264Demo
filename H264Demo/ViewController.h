@@ -12,13 +12,17 @@
 
 @interface ViewController : UIViewController
 {
-    IBOutlet UIImageView *imageView;
     IBOutlet UILabel *frameCountText, *frameSizeText;
+    IBOutlet UIImageView *imageView;
+    IBOutlet UIButton *file, *url;
     VideoFrameExtractor *videoDecoder;
     NSTimer *videoFrameTimer;
+    float playTime;
 }
 
--(IBAction) playVideo:(id) sender;
+-(IBAction) playFile:(id) sender;
+
+-(IBAction) playURL:(id) sender;
 
 
 @end
